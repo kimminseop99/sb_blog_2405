@@ -24,10 +24,18 @@ public class SecurityConfig {
                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
                 .formLogin(
                         formLogin -> formLogin
-                                .loginPage("/member/login"))
+                                .loginPage("/member/login")
+                                .defaultSuccessUrl("/")
+                )
+                .oauth2Login(
+                        oauth2Login -> oauth2Login
+                                .loginPage("/member/login")
+                )
                 .logout(
                         logout -> logout
-                                .logoutUrl("/member/logout")
+                                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
+                                .logoutSuccessUrl("/")
+                                .invalidateHttpSession(true)
                 )
         ;
         return http.build();

@@ -1,15 +1,18 @@
-<div>로그인</div>
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 
-<form th:action="@{/member/login}" method="POST">
-    <div>
-        <span>유저 아이디</span>
-        <input type="text" name="username" placeholder="아이디">
-    </div>
-    <div>
-        <span>유저 비밀번호</span>
-        <input type="password" name="password" placeholder="비밀번호">
-    </div>
-    <div>
+<body>
+<div class="container">
+    <h2>로그인</h2>
+    <form th:action="@{/member/login}" method="POST">
+        <div class="form_group">
+            <label for="username">ID</label>
+            <input type="text" name="username" placeholder="아이디">
+        </div>
+        <div class="form_group">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" placeholder="비밀번호">
+        </div>
         <button type="submit">로그인</button>
-    </div>
-</form>
+    </form>
+</div>
+</body>
