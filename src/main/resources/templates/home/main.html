@@ -1,11 +1,10 @@
 <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 <div>
-    <h1>메인</h1>
+    <div>메인</div>
     <a sec:authorize="isAnonymous()" href="/member/login">로그인</a>
     <div>
         <a sec:authorize="isAnonymous()" href="/oauth2/authorization/kakao">카카오 로그인</a>
     </div>
     <a sec:authorize="isAuthenticated()" href="/member/logout">로그아웃</a>
     <a href="/member/signup">회원가입</a>
-
 </div>
