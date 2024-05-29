@@ -21,5 +21,7 @@ public class Post extends BaseEntity {
 
     private String content;
 
+    private String thumnailImg;
+
 
 }
